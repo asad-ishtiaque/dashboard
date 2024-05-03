@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img src="images/logo.png" alt="" />
+        </div>
+        <div class="selectorsCombined">
+          <div class="selectors default activeBar">
+            <i class="fa-solid fa-table-cells-large dashboardIcon"></i>
+            <div>Dashboard</div>
+          </div>
+          <div class="selectors default">
+            <i class="fa-solid fa-gauge"></i>
+            <div>Overview</div>
+          </div>
+          <div class="selectors default">
+            <i class="fa-solid fa-book-open"></i>
+            <div>Courses</div>
+          </div>
+          <div class="selectors default">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div>Students</div>
+          </div>
+          <div class="selectors default">
+            <i class="fa-solid fa-chalkboard-user"></i>
+            <div>Teachers</div>
+          </div>
+          <div class="selectors default">
+            <i class="fa-solid fa-note-sticky"></i>
+            <div>Exams</div>
+          </div>
+          <div class="selectors default">
+            <i class="fa-solid fa-square-poll-vertical"></i>
+            <div>Results</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="body">
+        <div class="topBar">
+          <h2 class="h2">Dashboard</h2>
+          <div class="right-section">
+            <input class="searchBar" type="text" placeholder="Search" />
+            <button class="searchButton">
+              <img class="searchIcon" src="images/search.png" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="cardsContainer">
+          <div class="cards studentCard">
+            <div class="hexagon">
+              <div class="Icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+            </div>
+            <p class="textIcon">Total Students</p>
+            <p class="number">1220</p>
+          </div>
+          <div class="cards teacherCard">
+            <div class="Icon">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <p class="textIcon">Total Teachers</p>
+            <p class="number">120</p>
+          </div>
+          <div class="cards courseCard">
+            <div class="Icon">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <p class="textIcon">Total Courses</p>
+            <p class="number">15</p>
+          </div>
+          <div class="cards examCard">
+            <div class="Icon">
+              <i class="fa-solid fa-note-sticky"></i>
+            </div>
+            <p class="textIcon">Total Exams</p>
+            <p class="number">6</p>
+          </div>
+        </div>
+        <div class="secondRow">
+          <div class="statistics">
+            <p>Statistics</p>
+            <div id="chartdiv1"></div>
+          </div>
+          <div class="studentRatio">
+            <p>Student Ratio</p>
+            <div id="chartdiv2"></div>
+          </div>
+        </div>
+        <div class="database">
+          <div class="databaseHeader">
+            <p>Database</p>
+            <div class="tabs">
+              <button id="teacherTab" class="default">Teacher</button>
+              <button id="studentTab" class="default active">Student</button>
+              <button id="staffTab" class="default">Staff</button>
+              <div class="line"></div>
+            </div>
+          </div>
+          <table id="studentTable" class="table">
+            <tr>
+              <th>Student Name</th>
+              <th>Score</th>
+              <th>Submitted</th>
+              <th>Grade</th>
+              <th>Pass/Fail</th>
+            </tr>
+            <tr>
+              <td>Student 1</td>
+              <td>80/100</td>
+              <td>12/10/22 - 10:00 PM</td>
+              <td>Excellent</td>
+              <div class="passDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+            <tr>
+              <td>Student 2</td>
+              <td>70/100</td>
+              <td>12/08/22 - 09:00 PM</td>
+              <td>Average</td>
+              <div class="passDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+            <tr>
+              <td>Student 3</td>
+              <td>30/100</td>
+              <td>12/10/22 - 12:45 PM</td>
+              <td>Poor</td>
+              <div class="failDesign">
+                <td>Fail</td>
+              </div>
+            </tr>
+            <tr>
+              <td>Student 4</td>
+              <td>80/100</td>
+              <td>23/10/22 - 10:00 PM</td>
+              <td>Excellent</td>
+              <div class="passDesign">
+                <td>Pass</td>
+              </div>
+            </tr>
+          </table>
+          <table id="teacherTable" class="table teacherTable">
+            <tr>
+              <th>Teacher Name</th>
+              <th>Course</th>
+              <th>Students Taught</th>
+              <th>Feedback</th>
+            </tr>
+            <tr>
+              <td>Teacher 1</td>
+              <td>Mathematics</td>
+              <td>30</td>
+              <td>Overall good progress</td>
+            </tr>
+            <tr>
+              <td>Teacher 2</td>
+              <td>Science</td>
+              <td>25</td>
+              <td>Needs improvement in class participation</td>
+            </tr>
+            <tr>
+              <td>Teacher 3</td>
+              <td>English</td>
+              <td>40</td>
+              <td>Excellent communication skills</td>
+            </tr>
+            <tr>
+              <td>Teacher 4</td>
+              <td>History</td>
+              <td>20</td>
+              <td>Encourages critical thinking</td>
+            </tr>
+          </table>
+          <table id="staffTable" class="table">
+            <tr>
+              <th>Staff Name</th>
+              <th>Position</th>
+              <th>Department</th>
+              <th>Joining Date</th>
+              <th>Salary</th>
+            </tr>
+            <tr>
+              <td>Staff 1</td>
+              <td>Administrator</td>
+              <td>Administration</td>
+              <td>05/01/20</td>
+              <td>$50,000</td>
+            </tr>
+            <tr>
+              <td>Staff 2</td>
+              <td>Technician</td>
+              <td>IT Department</td>
+              <td>10/03/21</td>
+              <td>$40,000</td>
+            </tr>
+            <tr>
+              <td>Staff 3</td>
+              <td>Accountant</td>
+              <td>Finance</td>
+              <td>15/06/19</td>
+              <td>$60,000</td>
+            </tr>
+            <tr>
+              <td>Staff 4</td>
+              <td>Receptionist</td>
+              <td>Front Office</td>
+              <td>20/09/18</td>
+              <td>$35,000</td>
+            </tr>
+          </table>
+
+          <div></div>
+        </div>
+      </div>
+      <div class="rightBar">
+        <div class="rightBarHeader">
+          <p>Notice Board</p>
+          <button class="notifications">
+            <div><i class="fa-solid fa-bell"></i></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/script.js"></script>
+  <script src="/chart2.js"></script>
+</html>
