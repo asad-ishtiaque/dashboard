@@ -21,7 +21,7 @@ To use this dashboard, simply clone the repository and open the `index.html` fil
 
 ## Feedback
 
-Your feedback is valuable! If you have any suggestions or encounter any issues, please feel free to [open an issue](link_to_issues) or [contact me](link_to_contact).
+Your feedback is valuable! If you have any suggestions or encounter any issues, please feel free to [open an issue](link_to_issues) or [contact me](asad.ishtiaque.ai@gmail.com).
 
 ## License
 
